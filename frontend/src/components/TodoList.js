@@ -1,8 +1,14 @@
+import './TodoItem'
+import TodoItem from './TodoItem';
+
+
 export default function TodoList(props) {
-    const listItems = props.list.map(it => {<li>it.text</li>});
+    console.log(`list from TodoList component: ${props.toDos}`)
+    const listItems = props.toDos.map(it => <TodoItem key = {it.id} text = {it.text}/>);
+    console.log(listItems)
     return (
-        <list>
-            listItems
-        </list>
+        <ul>
+            {listItems}
+        </ul>
     )
 }

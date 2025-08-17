@@ -19,6 +19,8 @@ app.get('/api/todos', (req, res) => {
 })
 
 app.post('/api/todos', (req, res) => {
+    console.log('post received')
+    console.log(`body: ${req.body}`)
     let task = {id: todos.length + 1, text: req.body.text}
     todos.push(task)
     res.status(201).json(task);
