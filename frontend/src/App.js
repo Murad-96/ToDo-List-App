@@ -48,12 +48,16 @@ function App() {
   async function removeTask (id){
     try {
       console.log(`removing a task with id ${id}`)
-      const url = "http://localhost:3001/api/todos:id";
+      const url = `http://localhost:3001/api/todos/${new URLSearchParams(id)}`;
+      console.log(`url: ${url}`)
       const response = await fetch ( url, {
-        method: "DELETE",
+        method: "DELETE"
         
       }
       )
+    }
+    catch (e) {
+      console.log(e)
     }
   }
 
@@ -67,7 +71,7 @@ function App() {
         <h2>My to-do list</h2>
       </header>
       <div>
-       <TodoList toDos={toDo}/>
+       <TodoList toDos={toDo} removeFn={removeTask}/>
        <AddTodoForm fn={addTask}/>
       </div>
     </div>

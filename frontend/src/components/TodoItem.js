@@ -4,7 +4,8 @@ export default function TodoItem (props) {
     const[deleted, setDeleted] = useState(false);
 
     const handleDelete = () => {
-        setDeleted(true)
+        setDeleted(true);
+        props.fn(props.id)
     }
 
     return (
