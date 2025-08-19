@@ -39,6 +39,9 @@ function App() {
       if (!response.ok) {
         console.log('Failed to add a task.')
       }
+      const data = await response.json()
+      console.log(`task created: ${data}`)
+      setToDo([...toDo, data])
     }
     catch (e) {
       console.log(e)
@@ -55,6 +58,10 @@ function App() {
         
       }
       )
+      if (!response.ok) {
+        console.log("Task deletion failed.")
+      }
+      setToDo(toDo.filter(it=>it.id != id))
     }
     catch (e) {
       console.log(e)
@@ -71,8 +78,10 @@ function App() {
         <h2>My to-do list</h2>
       </header>
       <div>
-       <TodoList toDos={toDo} removeFn={removeTask}/>
-       <AddTodoForm fn={addTask}/>
+       <TodoList toDos={toDo} removeFn={removeTask} createFn={addTask}/>
+      </div>
+      <div>
+        <AddTodoForm fn={addTask}/>
       </div>
     </div>
   );

@@ -10,7 +10,8 @@ export default function AddTodoForm (props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.fn(taskText); 
+        const taskCreated = props.fn(taskText); 
+        console.log(taskCreated)
         setTaskText("");
     }
 

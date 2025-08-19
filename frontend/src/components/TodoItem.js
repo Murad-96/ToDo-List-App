@@ -1,18 +1,10 @@
-import { useState } from "react"
 
 export default function TodoItem (props) {
-    const[deleted, setDeleted] = useState(false);
-
-    const handleDelete = () => {
-        setDeleted(true);
-        props.fn(props.id)
-    }
-
     return (
-        !deleted && (
+        !props.isDeleted && (
             <div className="todoItem">
                 <p>{props.text}</p>
-                <button onClick={handleDelete}>Delete</button>
+                <button onClick={props.onDelete}>Delete</button>
             </div>
         )
     )
