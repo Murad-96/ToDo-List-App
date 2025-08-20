@@ -1,4 +1,6 @@
 import { useState } from "react"
+import './AddTodoForm'
+import styles from './AddTodoForm.css'
 
 export default function AddTodoForm (props) {
 
@@ -20,7 +22,7 @@ export default function AddTodoForm (props) {
             <label> Enter task name:
                 <input type="text" className="taskName" value={taskText} onChange={handleTaskName}></input>
             </label>
-            <button onClick={handleSubmit}>Create</button>
+            <button className="createButton" onClick={handleSubmit}>Create</button>
         </form>
     )
 }
