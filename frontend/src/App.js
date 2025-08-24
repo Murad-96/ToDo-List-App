@@ -51,7 +51,7 @@ function App() {
   async function removeTask (id){
     try {
       console.log(`removing a task with id ${id}`)
-      const url = `http://localhost:3001/api/todos/${new URLSearchParams(id)}`;
+      const url = `http://localhost:3001/api/todos/${id}`;
       console.log(`url: ${url}`)
       const response = await fetch ( url, {
         method: "DELETE"
@@ -61,7 +61,7 @@ function App() {
       if (!response.ok) {
         console.log("Task deletion failed.")
       }
-      setToDo(toDo.filter(it=>it.id != id))
+      setToDo(toDo.filter(it=>it._id != id))
     }
     catch (e) {
       console.log(e)
