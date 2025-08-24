@@ -5,14 +5,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Description
 
-This is a simple to-do list application that lets users create and delete tasks.
+This is a simple to-do list app that lets users create and delete tasks.
 
 ## Set up
 
 ### Front end
-navigate to frontend directory and run `npm start`
-
-Runs the app in the development mode.\
+Navigate to frontend directory and run `npm start`.
+This runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
